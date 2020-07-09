@@ -1,0 +1,24 @@
+.validate{
+    input, select, textarea{
+        &:invalid{
+            & + span {
+                color: $red2;
+            }
+            color: $red2;
+            border-color: $red2;
+            &:focus{
+                box-shadow: 1px 1px 1px $red2 inset, -1px -1px 1px $red2 inset;
+            }
+            margin-bottom: .25rem;
+            & ~ .invalid{
+                display: block;
+            }
+            & ~ :last-child{
+                margin-bottom: 1rem;
+            }
+            & ~ p{
+                top: 0;
+            }
+        }
+    }
+}

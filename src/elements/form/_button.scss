@@ -1,0 +1,65 @@
+input[type=button],
+input[type=submit],
+input[type=reset],
+button, .button{
+    margin-inline-end: 4px;
+    margin-block-end: 8px;
+   
+    background: $bg1;
+    border-radius: $border-radius;
+    border: $border-width solid transparent;
+    font-size: 12px;
+    font-family: lato, sans-serif;
+    line-height: 22px;
+    color: var(--light1);
+    filter: saturate(1);
+    text-decoration: none;
+    
+    overflow: hidden;
+    word-spacing: 1px;
+   
+    // transition:  filter .2s ease, border-color .2s ease, color .2s ease;
+    transition: all $trans-time $trans-func;
+
+    &:last-child{
+        margin-inline-end: 0;
+    }
+
+    &:hover, &:focus{
+        box-shadow: 0 2px 0 rgba(0,0,0,.015);
+        filter: saturate(1.3);
+    }
+
+    &.light{
+        background: $primary-color-light;
+        border-color: $primary-color-light;
+        color: $primary-color;
+    }
+
+    // text-indent: 10em;
+    // text-emphasis: 'x';
+   
+    i{
+        display: inline-block;
+        margin-inline-end: 8px;
+        text-align: start;
+        font-style: normal;
+    }
+}
+
+[role=button],
+input[type=button],
+input[type=submit],
+input[type=reset],
+button, .button, .btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    letter-spacing: .5px;
+    touch-action: manipulation;
+    cursor: pointer;
+    text-transform: uppercase;
+    outline: 0;
+    padding: 8px 16px;
+}

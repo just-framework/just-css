@@ -1,0 +1,141 @@
+input:not([type]),
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=url],
+input[type=time],
+input[type*=date],
+input[type=month],
+input[type=week],
+input[type=tel],
+input[type=number],
+input[type=search],
+input[type=file],
+select,
+textarea{
+    display: block;
+    width: 100%;
+    line-height: 22px;
+    padding: 8px 12px;
+    background: var(--light1);
+    border-radius: $border-radius;
+    border: $border-width solid var(--border-color);
+    transition: $trans-time border $trans-func;
+    font-size: 14px;
+    font-family: lato, sans-serif;
+    letter-spacing: .5px;
+    font-weight: 500;
+    color: var(--text-color);
+    outline: none;
+    margin: .5rem 0 1rem;
+
+    &:not(:placeholder-shown) + span{
+        z-index: 0;
+        opacity: 1;
+        visibility: visible;
+        top: calc(-6px - #{$border-width} );
+        transition: top .4s, opcity .3s;
+    }
+    &::placeholder{
+        color: var(--placeholder-color);
+    }
+    &:focus {
+        border-color: $border-color-active;
+        box-shadow: 1px 1px 1px $border-color-active inset, -1px -1px 1px $border-color-active inset;
+        background-color: var(--light1);
+        & + span{
+            color: $border-color-active;
+        }
+    }
+
+    &:required, &:invalid{
+        background-image: radial-gradient($red3 50%, transparent 50%);
+        background-position: calc(100% - 12px) calc(10px);
+        background-size: 7px 7px;
+        background-repeat: no-repeat;
+    }
+    &:required:valid{
+        background-image: radial-gradient($green3 50%, transparent 50%);
+    }
+    &::-internal-autofill-selected{
+        background-color: var(--light1) !important;
+    }
+    & + span{
+        display: block;
+        font-size: 12px;
+        line-height: 1.2em;
+        font-weight: 700;
+        text-transform: capitalize;
+        letter-spacing: 1px;
+        position: absolute;
+        top: 0;
+        left: 12px;
+        background-color: var(--light1);
+        padding: 0 4px;
+        pointer-events: none;
+        color: var(--label-color);
+        opacity: 0;
+        visibility: hidden;
+        z-index: -1;
+    }
+    & ~ p,  & ~ .invalid{
+        color:  var(--dark5);
+        font-size: 12px;
+        padding: 0 2px;
+        line-height: 14px;
+        margin: 0;
+    }
+    & ~ p{
+        position: relative;
+        top: -.75rem;
+    }
+
+    & ~ .invalid{
+        display: none;
+        color: $red2;
+    }
+}
+
+form{
+    padding: 2rem;
+    label{
+        position: relative;
+        display: block;
+        font-family: lato, sans-serif;
+        line-height: 20px;
+        margin-bottom: 5px;
+    }
+    fieldset{
+        display: block;
+        width: 100%;
+        line-height: 22px;
+        padding: 1rem;
+        background: var(--light1);
+        border-radius: $border-radius;
+        border: $border-width solid var(--border-color);
+        margin-bottom: 1rem;
+        position: relative;
+        legend{
+            text-transform: capitalize;
+            letter-spacing: 1px;
+            font-size: 12px;
+            line-height: 1.2em;
+            font-weight: 700;
+            padding: 0 4px;
+            color: var(--label-color);
+            display: block;
+            position: absolute;
+            top: calc(-6px - #{$border-width} );
+            left: 12px;
+            background-color: var(--light1);
+        }
+        label{
+            margin-bottom: 0;
+        }
+    }
+}
+
+[disabled] > *, *:disabled {
+    opacity: .5;
+    cursor: default;
+}

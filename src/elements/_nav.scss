@@ -1,0 +1,129 @@
+body>header{
+    padding-bottom: 4rem;
+}
+header{
+    nav{
+        // box-shadow: 0 1px 0 0 var(--light2);
+        // background-color: white;
+        z-index: 10;
+        padding: $space 0;
+        // margin-bottom: 4rem;
+        @include media("<laptop"){
+            flex-direction: column;
+            > a{
+                align-self: start;
+            }
+            ul{
+                margin-top: $space;
+                margin-bottom: $space;
+            }
+        }
+        @include media("<tablet"){
+            align-items: start;
+            >a{
+                padding-right: $space * 3.5;
+            }
+            ul{
+                width: 100%;
+            }
+        }
+    }
+}
+
+nav {
+    align-items: center;
+    display: flex;
+    font-weight: 400;
+    justify-content: space-between;
+        
+    > a {
+        display: inline-block;
+        cursor: pointer;
+        text-decoration: none;
+        img{
+            width: auto;
+            height: $space8;
+        }
+    }
+    > [role=button]{
+        position: absolute;
+        right: $space8;
+        width: $space8;
+        height: $space8;
+        padding: 0;
+        font-size: larger;
+        line-height: 1;
+        background: 0 0;
+        color: $primary-color;
+        @include media(">=laptop"){
+            display: none;
+        }
+    }
+    > input[type=checkbox]:checked ~ *{
+        display: block;
+        @include media("<laptop"){
+            display: none;
+        }
+    }
+    
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+            display: inline-flex;
+            // margin: .6rem .$space;
+            @include media("<tablet"){
+                display: block;
+            }
+            position: relative;
+            text-align: start;
+            
+            
+            a{
+                padding: 0.4rem 0.8rem;
+                text-decoration: none;
+                background-color: transparent;
+                border-radius: $border-radius;
+                font-size: 14px;
+                display: block;
+                // border: var(--borderWidth) solid transparent;
+                
+                color: var(--labelColor);
+                &:hover{
+                    transition: color .2s ease;
+                    color: $primary-color;
+                    // border-color: var(--borderColor);
+                }
+            }
+            
+        }
+    }
+    a, .button{
+        margin-bottom: 0;
+    }
+}
+
+/* Nav Dropdown */
+// nav ul li:hover ul {
+//     display: block;
+// }
+
+// nav ul li ul {
+//     background: var(--color-bg);
+//     border: 1px solid var(--color-bg-secondary);
+//     border-radius: var(--border-radius);
+//     box-shadow: var(--box-shadow) var(--color-shadow);
+//     display: none;
+//     height: auto;
+//     padding: .5rem $space;
+//     position: absolute;
+//     right: 0;
+//     top: 1.7rem;
+//     width: auto;
+// }
+
+// nav ul li ul li,
+// nav ul li ul li a {
+//     display: block;
+// }

@@ -1,0 +1,54 @@
+meter {
+  height: .5rem;
+  position: relative;
+  width: 100%;
+  background: var(--light2);
+  border: 0;
+  border-radius: .5rem;
+  display: inline-flex;
+  align-self: center;
+}
+
+/* WebKit */
+meter::-webkit-meter-bar {
+  background: var(--light2);
+  border: 0;
+  border-radius: .5rem;
+  height: .5rem;
+
+}
+
+meter::-webkit-meter-optimum-value,
+meter::-webkit-meter-suboptimum-value,
+meter::-webkit-meter-even-less-good-value {
+  border-radius: .5rem;
+}
+
+meter::-webkit-meter-optimum-value {
+  background: $green3;
+}
+
+meter::-webkit-meter-suboptimum-value {
+  background: $canary3;
+}
+
+meter::-webkit-meter-even-less-good-value  {
+  background: $red3;
+}
+
+/* Firefox */
+meter::-moz-meter-bar {
+  border-radius: .5rem;
+}
+
+meter:-moz-meter-optimum::-moz-meter-bar {
+  background: $green3;
+}
+
+meter:-moz-meter-sub-optimum::-moz-meter-bar {
+  background: $canary3;
+}
+
+meter:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+  background: $red3;
+}

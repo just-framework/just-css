@@ -1,0 +1,84 @@
+div[role=menu], .dropdown-menu{
+    --width: 100%;
+    --max-width: 300px;
+    display: inline-flex;
+    position: relative;
+    button {
+        margin: 0;
+        &:focus,
+        &:active {
+            + ul, + .dropdown {
+                opacity: 1;
+                transform: none;
+                transition: opacity .25s $trans-func, transform .2s $trans-func;
+                visibility: visible;
+                li{
+                    opacity: 1;
+                    transition: all opacity .25s $trans-func .1s;
+                    &:hover{
+                        background: rgba(#000,.04);
+                    }
+                }
+            }
+        }
+    }
+    &[aria-controls*="top"]{
+        ul, .dropdown{
+            top: initial;
+            bottom: calc(100% + 10px);
+            transform-origin: bottom center;
+        }
+    } 
+
+    &[aria-controls*="end"]{
+        ul, .dropdown{
+            right: 0;
+            left: inherit;
+        }
+    } 
+
+    >ul, .dropdown {
+        max-width: var(--max-width);
+        min-width: var(--width);
+        width: auto;
+        min-height: 2rem;
+        max-height: calc(100vh - 96px);
+        overflow-x: hidden;
+        overflow-y: auto;
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 0;
+        background: var(--light1);
+        border-radius: 4px;
+        box-shadow: 0 2px 3px var(--light3);
+        text-align: start;
+        list-style: none;
+        padding: .5rem 0;
+        margin: 0;
+        opacity: 0;
+        transform: scale(0.75, 0.5625);
+        transform-origin: top center;
+        visibility: hidden;
+        z-index: 1;
+        
+        li {
+            opacity: 0;
+            line-height: 22px;
+            color: var(--dark2);
+            display: block;
+            &.active {
+                color: $blue1;
+            } 
+            a {
+                color: var(--dark5);
+                display: block;
+                text-decoration: none;
+                padding: .4rem 1rem;
+                transition: color .2s ease;
+                &:hover{
+                    color: var(--dark2);
+                }
+            }
+        }
+    }
+}

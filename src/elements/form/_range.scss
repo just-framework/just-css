@@ -1,0 +1,89 @@
+/* range
+========================================================================== */
+
+input[type="range"] {
+	-webkit-appearance: none;
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+	width: 100%;
+	height: .5rem;
+	border-color: transparent;
+	border-radius: $border-radius;
+	background: var(--light2);
+	box-shadow: none;
+	outline: none;
+	margin: .8rem 0 1rem;
+	cursor: pointer;
+	&.vertical{
+		height: 200px;
+		width: 20px;
+		-webkit-appearance: slider-vertical;
+		background: rgba(0,0,0,0.08);
+	}
+	&::-moz-range-track {
+		border: inherit;
+		background: transparent;
+	}
+	&::-ms-track {
+		border: inherit;
+		color: transparent; /* don't drawn vertical reference line */
+		background: transparent;
+	}
+	&::-ms-fill-lower,
+	&::-ms-fill-upper {
+		background: transparent;
+	}
+
+	&::-moz-focus-outer {
+		border: 0;
+	}
+	
+	&::-ms-tooltip {
+		display: none;
+	}
+	&::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		width: 20px;
+		height: 20px;
+		background: $primary-color;
+		border: $border-width solid transparent;
+		border-radius: 50%;
+		background-image: -webkit-radial-gradient( var(--light1) 20%, $primary-color 35%, $primary-color 70% );
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$primary-color', endColorstr='#ffffff',GradientType=1 );
+		box-shadow: 0 1px 2px rgba(0,0,0,0.12);
+	}
+	&::-moz-range-thumb{
+		-webkit-appearance: none;
+		width: 20px;
+		height: 20px;
+		background: $primary-color;
+		border: $border-width solid transparent;
+		border-radius: 50%;
+		background-image: -webkit-radial-gradient( var(--light1) 20%, $primary-color 35%, $primary-color 70% );
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$primary-color', endColorstr='#ffffff',GradientType=1 );
+		box-shadow: 0 1px 2px rgba(0,0,0,0.12);
+	}
+	&::-ms-thumb{
+		-webkit-appearance: none;
+		width: 20px;
+		height: 20px;
+		background: $primary-color;
+		border: $border-width solid transparent;
+		border-radius: 50%;
+		background-image: -webkit-radial-gradient( var(--light1) 20%, $primary-color 35%, $primary-color 70% );
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$primary-color', endColorstr='#ffffff',GradientType=1 );
+		box-shadow: 0 1px 2px rgba(0,0,0,0.12);
+	}
+
+	+ output{
+		position: absolute;
+		right: 0;
+		top: 0;
+		&:after{
+			content: attr(data-suffixes);
+			padding-inline-start: $space1;
+		}
+	}
+}
+
+
+

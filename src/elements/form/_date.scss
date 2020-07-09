@@ -1,0 +1,36 @@
+[size="3"] input, input[size="3"]{
+    &::-webkit-calendar-picker-indicator {
+        cursor: pointer;
+        border-radius: 50%;
+        position: relative;
+        top: -8px;
+    }
+    &::-webkit-calendar-picker-indicator:hover {
+        -webkit-box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.04);
+    }
+}
+
+::-webkit-datetime-edit-text { padding: 0 5px; }
+::-webkit-datetime-edit-month-field { text-transform: uppercase; }
+::-webkit-datetime-edit-day-field { text-transform: uppercase; }
+::-webkit-datetime-edit-year-field { text-transform: uppercase; }
+
+
+
+// input[type=time],
+// input[type*=date],
+// input[type=month],
+// input[type=week]{
+//     position: relative;
+//     &::-webkit-inner-spin-button,
+//     &::-webkit-outer-spin-button {
+//         cursor: pointer;
+//         -webkit-appearance: inner-spin-button !important;
+//         width: 25px;
+//         position: absolute;
+//         top: 1px;
+//         right: 40px;
+//         height: calc(100% - 2px);
+//     }
+// }

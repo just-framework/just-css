@@ -1,0 +1,89 @@
+[role=tablist]{
+    position: relative;
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    @include media("<laptop"){
+        flex-direction: column;
+    }
+    label{
+        width: 100%;
+        position: relative;
+        
+        sup{
+            cursor: pointer;
+            font-size: $size2-font-size;
+            color: rgba(#fff, 0.7);
+            background-color: #00bcd4;
+            background-color: $blue2;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            user-select: none;
+            padding: $size2-padding;
+            line-height: $size2-line-height;
+            height: $size2-height;
+            transition: color 0.2s ease;
+            width: 100%;
+            position: relative;
+            margin-bottom: .5rem;
+          
+            &:before{
+                content: "";
+                position: absolute;
+                right: 0;
+                width: 100%;
+                height: 2px;
+                // background-color: #4A66F4;
+                background-color: $pink2;
+                transition: transform .25s;
+                top: 100%;
+                opacity: 0;
+                z-index: -1;
+                transform: translateX(-100%) scaleX(2);
+            }
+        }
+
+        > sub{
+            position: relative;
+            padding: 1re;
+            padding: .5rem 1rem 1rem;
+            font-size: 1rem;
+            display: none;
+            @include media(">=laptop"){
+                visibility: hidden;
+                display: block;
+            }
+            width: 100%;
+        }
+        @include media(">=laptop"){
+            @for $i from 2 through 10 {
+                &:nth-of-type(#{$i}) > sub{left: 100% - (100% * $i);}
+                &:first-child:nth-last-child(#{$i})  > sub,
+                &:first-child:nth-last-child(#{$i}) ~ label > sub {
+                    width: 100% * $i;
+                }
+            } 
+        }
+        
+    }
+    
+    input[type=radio]:checked{
+        + sup{
+            color: #fff;
+            &::before{
+                z-index: 1;
+                opacity: 1;
+                transform: translateX(0) scaleX(1);
+            }
+        }
+        ~ sub{
+            display: block;
+            @include media(">=laptop"){
+                visibility: visible;
+            }
+        }
+    }
+}

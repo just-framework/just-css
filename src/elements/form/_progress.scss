@@ -1,0 +1,28 @@
+@keyframes progress-indeterminate{
+    0%{background-position:200% 0}
+    100%{background-position:-200% 0}
+}
+progress{
+    display: inline-flex;
+    align-self: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: var(--light2);
+    border: 0;
+    border-radius: .5rem;
+    color: $primary-color;
+    height: .5rem;
+    position: relative;
+    width: 100%;
+    
+}
+
+progress::-webkit-progress-bar{background:0 0;border-radius:.5rem}
+progress::-webkit-progress-value{background:$primary-color;border-radius:.5rem}
+progress::-moz-progress-bar{background:$primary-color;border-radius:.5rem}
+progress:indeterminate{
+    animation:progress-indeterminate 1.5s linear infinite;
+    background:var(--light2) linear-gradient(to right,$primary-color 30%,var(--light2) 30%) top left/150% 150% no-repeat
+}
+progress:indeterminate::-moz-progress-bar{background:0 0}

@@ -1,0 +1,153 @@
+
+[size="1"] input, input[size="1"],
+[size="1"] select, select[size="1"],
+[size="1"] textarea, textarea[size="1"],
+[size="1"] button, button[size="1"],
+[size="1"] .button, .button[size="1"]{
+    line-height: 16px;
+    padding: 6px 10px;
+    font-size: 12px;
+}
+
+[size="2"] input, input[size="2"],
+[size="2"] select, select[size="2"],
+[size="2"] textarea, textarea[size="2"],
+[size="2"] button, button[size="2"],
+[size="2"] .button, .button[size="2"]{
+    line-height: 22px;
+    padding: 8px 12px;
+    font-size: 14px;
+}
+
+[size="3"] input, input[size="3"],
+[size="3"] select, select[size="3"],
+[size="3"] textarea, textarea[size="3"]{
+    line-height: 24px;
+    padding: 12px 14px;
+    font-size: 14px;
+    & + span{
+        top: 8px;
+        left: 20px;
+    }
+    &:not(:placeholder-shown){
+        padding: 22px 14px 8px;
+        line-height: 18px;
+        font-weight: bold;
+        & + span{
+            line-height: 14px;
+            padding: 0;
+            background-color: transparent;
+            top: 8px;
+            left: 14px;
+            color: var(--dark5);
+            font-weight: normal;
+        }
+    } 
+}
+
+// button sizes
+[size="3"] button, button[size="3"],
+[size="3"] .button, .button[size="3"]{
+    line-height: 24px;
+    padding: 12px 14px;
+    font-size: 14px;
+}
+
+[size="4"] button, button[size="4"],
+[size="4"] .button, .button[size="4"]{
+    line-height: 26px;
+    padding: 1rem 1.5rem;
+    font-size: 16px;
+}
+
+// radio & checkbox sizes
+[size="1"] input[type=radio],  input[type=radio][size="1"],
+[size="1"] input[type=checkbox], input[type=checkbox][size="1"]{
+    & + span {
+        padding-left: 16px;
+        line-height: 16px;
+        min-height: 16px;
+        font-size: 12px;
+        &:before{
+            width: 16px;
+            height: 16px;
+        }
+    }
+    & ~ *:not(:empty) {
+        padding-left: 22px;
+    }
+}
+
+[size="1"] input[type=radio],  input[type=radio][size="1"]{
+    & + span:after {
+        width: 16px;
+        height: 16px;
+    }
+}
+[size="1"] input[type=checkbox], input[type=checkbox][size="1"]{
+    & + span:after{
+        left: 5px;
+        top: 2px;
+    }
+}
+
+
+[size="2"] input[type=radio],  input[type=radio][size="2"],
+[size="2"] input[type=checkbox], input[type=checkbox][size="2"]{
+    & + span {
+        padding-left: 22px;
+        line-height: 22px;
+        min-height: 22px;
+        font-size: 14px;
+        &:before{
+            width: 22px;
+            height: 22px;
+        }
+    }
+    & ~ *:not(:empty) {
+        padding-left: 30px;
+    }
+}
+
+[size="2"] input[type=radio],  input[type=radio][size="2"]{
+    & + span:after {
+        width: 22px;
+        height: 22px;
+    }
+}
+[size="2"] input[type=checkbox], input[type=checkbox][size="2"]{
+    & + span:after{
+        left: 8px;
+        top: 5px;
+    }
+}
+
+[size="3"] input[type=radio],  input[type=radio][size="3"],
+[size="3"] input[type=checkbox], input[type=checkbox][size="3"]{
+    & + span {
+        padding-left: 24px;
+        line-height: 24px;
+        min-height: 24px;
+        font-size: 16px;
+        &:before{
+            width: 24px;
+            height: 24px;
+        }
+    }
+    & ~ *:not(:empty) {
+        padding-left: 32px;
+    }
+}
+
+[size="3"] input[type=radio],  input[type=radio][size="3"]{
+    & + span:after {
+        width: 24px;
+        height: 24px;
+    }
+}
+[size="3"] input[type=checkbox], input[type=checkbox][size="3"]{
+    & + span:after{
+        left: 9px;
+        top: 6px;
+    }
+}

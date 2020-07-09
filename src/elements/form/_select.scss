@@ -1,0 +1,50 @@
+select:not([multiple]) {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image:
+        linear-gradient(45deg, transparent 49%, gray 50%),
+        linear-gradient(135deg, gray 49%, transparent 50%);
+    background-position:
+        calc(100% - 20px) calc(1em + 3px),
+        calc(100% - 15px) calc(1em + 3px);
+    background-size: 4px 5px, 5px 5px;
+    background-repeat: no-repeat;
+    outline: none !important;
+    option{
+        outline: none !important;
+    }
+}
+select[multiple]{
+    padding: .5rem;
+    overflow: auto;
+    option {
+        border-radius: $border-radius;
+        padding: 6px 10px;
+        margin-bottom: 3px;
+        
+    }
+}
+   
+select::-ms-expand {
+    display: none;
+}
+
+
+[size="1"] select, [size="1"] > select{
+    background-position: 
+    calc(100% - 16px) 13px,
+    calc(100% - 11px) 13px ;
+}
+
+[size="2"] select, [size="2"] > select{
+    background-position:
+        calc(100% - 20px) 17px,
+        calc(100% - 15px) 17px;
+}
+
+[size="3"] select, [size="3"] > select{
+    background-position:
+        calc(100% - 24px) 21px,
+        calc(100% - 19px) 21px;
+}

@@ -1,0 +1,17 @@
+input[type=number] {
+    position: relative; 
+   &::-webkit-inner-spin-button,
+   &::-webkit-outer-spin-button {
+        opacity: 1;
+        cursor: pointer;
+        -webkit-appearance: inner-spin-button !important;
+        width: 25px;
+        position: absolute;
+        top: 1px;
+        right: 1px;
+        height: calc(100% - 2px);
+    }
+    &::-webkit-textfield-decoration-container{
+        padding-right: 16px;
+    }
+}
